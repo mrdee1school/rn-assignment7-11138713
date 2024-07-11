@@ -1,26 +1,20 @@
-import CheckoutItemCard from "@/components/CheckoutItemCard";
-import {
-  Image,
-  SafeAreaView,
-  View,
-  ScrollView,
-  TouchableOpacity,
-} from "react-native";
+import { Image, SafeAreaView, View, TouchableOpacity } from "react-native";
 
 import { Text } from "react-native";
 import { router } from "expo-router";
+import CheckoutItem from "@/components/CheckoutItem";
 
-export default function TabTwoScreen() {
-  const checkout = () => {
-    router.push("/home");
+export default function Checkout() {
+  const Home = () => {
+    router.push("/index");
   };
   return (
     <SafeAreaView className="bg-[#FAFAFD] h-full">
       <View className="flex-row justify-between px-5">
         <View className="pl-6" />
-        <View>
+        <TouchableOpacity onPress={Home}>
           <Image source={require("@/assets/images/Logo.png")} />
-        </View>
+        </TouchableOpacity>
         <View className="flex-row items-center">
           <View className="pr-2">
             <Image source={require("@/assets/images/Search.png")} />
@@ -28,13 +22,11 @@ export default function TabTwoScreen() {
         </View>
       </View>
 
-      <View className="items-center pt-8">
+      <View className="items-center pt-6 pb-4">
         <Text className="text-3xl font-light">Checkout</Text>
       </View>
 
-      <ScrollView>
-        <CheckoutItemCard />
-      </ScrollView>
+      <CheckoutItem />
 
       <View className="flex-row justify-between items-center px-8 py-2">
         <Text className="text-lg font-serif">Est. Total</Text>
@@ -45,9 +37,7 @@ export default function TabTwoScreen() {
           tintColor="white"
           source={require("@/assets/images/shoppingBag.png")}
         />
-        <TouchableOpacity onPress={checkout}>
-          <Text className="text-white text-lg">Checkout</Text>
-        </TouchableOpacity>
+        <Text className="text-white text-lg">Checkout</Text>
       </View>
     </SafeAreaView>
   );
