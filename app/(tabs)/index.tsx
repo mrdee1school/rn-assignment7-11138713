@@ -1,34 +1,7 @@
-import ItemCard from "@/components/ItemCard";
 import { router } from "expo-router";
 import { Image, View, Text, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-
-const items = {
-  dress1: {
-    productImage: require("@/assets/images/dress1.png"),
-    name: "Office Wear",
-    description: "reversible angora cardigan",
-    price: 19.99,
-  },
-  dress2: {
-    productImage: require("@/assets/images/dress2.png"),
-    name: "",
-    description: "reversible angora cardigan",
-    price: 29.99,
-  },
-  dress3: {
-    productImage: require("@/assets/images/dress3.png"),
-    name: "Product 3",
-    description: "reversible angora cardigan",
-    price: 39.99,
-  },
-  dress4: {
-    productImage: require("@/assets/images/dress4.png"),
-    name: "Product 4",
-    description: "reversible angora cardigan",
-  },
-};
+import Item from "@/components/Item";
 
 export default function HomeScreen() {
   const checkout = () => {
@@ -68,7 +41,7 @@ export default function HomeScreen() {
         </View>
       </View>
 
-      <ItemCard />
+      <Item />
     </SafeAreaView>
   );
 }
